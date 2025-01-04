@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+
+  main {
+    text-align: center;
+    width: 100%;
+    max-width: 600px; // Limitar el ancho máximo del contenido
+  }
+}
+
+#boxContainer {
+  display: grid;
+  justify-content: center; // Centra las cajas horizontalmente
+  align-items: center; // Centra las cajas verticalmente
+  gap: 5px; // Separación entre cajas
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background-color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#timerContainer {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 2px solid #ccc;
+}
