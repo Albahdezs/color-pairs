@@ -13,12 +13,19 @@ class Timer {
         console.log('Creamos un timer.');
         this.idElement = idElement;
 
-        if(localStorage.getItem('timer') != null) {
-            // JSON lo convierte en objeto
-            let timerFromLocalStorage = JSON.parse(localStorage.getItem('timer'));
-            this.sec = parseInt(timerFromLocalStorage.sec);
-            this.min = parseInt(timerFromLocalStorage.min);
-            this.ms = parseInt(timerFromLocalStorage.ms);
+        const storedTimer = localStorage.getItem('timer');
+        if (storedTimer) {
+            try {
+                let timerFromLocalStorage = JSON.parse(storedTimer);
+                this.sec = parseInt(timerFromLocalStorage.sec) || 0;  // Añadimos un fallback a 0 si no es un número
+                this.min = parseInt(timerFromLocalStorage.min) || 0;
+                this.ms = parseInt(timerFromLocalStorage.ms) || 0;
+            } catch (e) {
+                console.error("Error al parsear el timer desde localStorage", e);
+                this.ms = 0;
+                this.min = 0;
+                this.sec = 0;
+            }
         } else {
             this.ms = 0;
             this.min = 0;
