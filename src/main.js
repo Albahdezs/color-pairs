@@ -1,7 +1,7 @@
 import '../sass/main.scss';
 
 import Game from './class/Game';
-
+console.log("¡JavaScript cargado correctamente!");
 let data = Game.getRowsCols();
 let game = new Game(data.rows, data.cols, 'game');
 
